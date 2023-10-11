@@ -1,11 +1,11 @@
 package com.example.libdrew.services
 
 data class GalleryResponse(
-    val `data`: List<Data>,
+    val `data`: List<GalleryResponseData>,
     val status: Int,
     val success: Boolean
 ) {
-    data class Data(
+    data class GalleryResponseData(
         val account_id: Int,
         val account_url: String,
         val ad_config: AdConfig,
@@ -49,7 +49,7 @@ data class GalleryResponse(
         val tags: List<Tag>,
         val title: String,
         val topic: Any,
-        val topic_id: Int,
+        val topic_id: Int?,
         val type: String,
         val ups: Int,
         val views: Int,
