@@ -1,6 +1,8 @@
 plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
+    id("kotlin")
+    id("kotlin-kapt")
 }
 
 java {
@@ -10,4 +12,7 @@ java {
 
 dependencies {
 
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    "kapt"("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
 }
