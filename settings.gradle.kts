@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Drewmetapp"
 include(":app")
-include(":app:libdrew")
