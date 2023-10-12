@@ -8,7 +8,7 @@ import retrofit2.http.GET
 interface ImgurAPIv3 {
 
     @GET("gallery/hot?album_peviews=true")
-    fun getGalery() : Call<GalleryResponse>
+    fun getGallery() : Call<GalleryResponse>
 
     @GET("tags")
     fun getTags() : Call<GalleryTagsResponse>
