@@ -12,7 +12,7 @@ object ImgurClient {
         OkHttpClient.Builder()
             .addInterceptor{
                 val request = it.request().newBuilder()
-                    .addHeader("Authorization","Client-ID 16abb74c6e5c7e8")
+                    .addHeader("Authorization","Client-ID $API_KEY")
                     .build()
                 it.proceed(request)
             }.build()

@@ -3,6 +3,7 @@ package com.example.drewmetapp
 import com.example.drewmetapp.apis.ImgurAPIv3
 import com.example.drewmetapp.params.Section
 import junit.framework.TestCase.assertNotNull
+import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import org.junit.Test
 import retrofit2.Retrofit
@@ -24,20 +25,23 @@ class ImgurAPIv3Tests {
 //        .build()
 //    private val api = retrofit.create(ImgurAPIv3::class.java)
     val api = ImgurClient.api;
+
+    // TODO: runBlocking {} ?
+
     @Test
-    fun `get tags working`(){
-        val response = api.getTags().execute()
+    fun `get tags working`() = runBlocking{
+        val response = api.getTags()
         //println(response.raw().toString())
         assertNotNull(response.body())
     }
-
     @Test
-    fun `get galleries hot working`(){
-        val response = api.getGallery(Section.HOT).execute()
+    fun `get galleries hot working`() = runBlocking{
+        val response = api.getGallery(Section.HOT)
+        assertNotNull(response.body())
     }
     @Test
-    fun `get galleries top working`(){
-        val response = api.getGallery(Section.TOP).execute()
+    fun `get galleries top working`() = runBlocking{
+        val response = api.getGallery(Section.TOP)
         assertNotNull(response.body())
     }
 }

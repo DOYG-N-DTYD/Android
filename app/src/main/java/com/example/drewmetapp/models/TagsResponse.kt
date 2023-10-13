@@ -1,12 +1,12 @@
 package com.example.drewmetapp.models
 
-data class GalleryTagsResponse(
+data class TagsResponse(
     val `data`: Data,
     val status: Int,
     val success: Boolean
 ) {
     data class Data(
-        val featured: String,
+        val featured: Any?,
         val galleries: List<Gallery>,
         val tags: List<Tag>
     ) {
